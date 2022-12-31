@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    int N;
+    float a, s, num = 1, den = 1;
+    printf("Input N: ");
+    scanf("%d", &N);
+    printf("Input a: ");
+    scanf("%f", &a);
+    s = num / den; // n = 0
+    for (int i = 1; i <= N; i++) // n = 1..N
+    {
+        num *= a;
+        den *= i;
+        s += num / den;
+    }
+    printf("s = %f", s);
+    return 0;
+}
