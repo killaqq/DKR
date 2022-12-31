@@ -1,0 +1,35 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+int is_word(char* str)
+{
+	int f = 0;
+	for (int i = 0; i < strlen(str); i++)
+	{
+		if (isalnum(str[i]))
+		{
+			f = 1;
+			break;
+		}
+	}
+	return f;
+}
+
+int main()
+{
+	char str[256];
+	int n = 0;
+	while ((scanf("%s", str)) != EOF)
+	{
+		if (is_word(str))
+			n++;
+	}
+	FILE* fout = fopen("result.txt", "wt");
+	fprintf(fout, "%d", n);
+	fclose(fout);
+	return 0;
+}
